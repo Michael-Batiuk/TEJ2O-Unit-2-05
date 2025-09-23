@@ -1,11 +1,18 @@
 /* Copyright (c) 2020 MTHS All rights reserved
  *
- * Created by: Michael Batiuk
+ * Created by: Michael
  * Created on: Sep 2025
- * This program gets the current temperature, in K.
+ * This program Shows temperature K
 */
+
+// our variable for a temperature
+let temperatureKelvin: number = 0
 
 basic.clearScreen()
 basic.showIcon(IconNames.Happy)
 
-// comment
+// Shows real temperature K
+input.onButtonPressed(Button.A, function () {
+    temperatureKelvin = input.temperature()
+    basic.showString('The temperature is:' + (temperatureKelvin + 273).toString() + 'K')
+})
